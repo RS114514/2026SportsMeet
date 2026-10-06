@@ -1,0 +1,469 @@
+{
+  "wiki_repo": {
+    "id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+    "name": "2026SportsMeet",
+    "progress_status": "completed",
+    "wiki_present_status": "COMPLETED",
+    "recovery_checkpoint": "wiki_generation_completed",
+    "last_commit_id": "f1aae38afab6a0d4fc4d89c6ebc5b9c293e1fada",
+    "last_commit_update": "2026-10-06T14:20:49Z",
+    "gmt_create": "2026-10-06T14:20:49Z",
+    "gmt_modified": "2026-10-06T14:20:49Z",
+    "extend_info": "{\"language\":\"zh\",\"active\":true,\"branch\":\"main\"}"
+  },
+  "wiki_catalogs": [
+    {
+      "id": "4da0be46-3e08-4d15-896e-79e543c7c535",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "项目概述与快速开始",
+      "description": "project-overview",
+      "prompt": "为 2026SportsMeet 校运会视听内容制作工程创建项目概述与快速开始文档。说明项目的背景、目标、四项备选产出方向最终选择出的三部核心视频（传统高光混剪主片、学生会幕后宣传片、开幕式多机位实况片）以及已取消的视频四历史归档情况；明确校方禁飞无人机的安全红线及其对整体拍摄策略的影响；描述目标受众（学校师生、家长、新媒体社成员、后续社团传承者）和发布渠道（微信视频号、哔哩哔哩、校园大屏）。给出新手入门路径：先读 README 了解全貌，再读需求梳理明确约束，随后按视频一、二、三顺序进入对应过程工作区或成品脚本，最后查阅参考视频脚本学习标杆拆解。补充仓库目录四段式结构（总控层、成品脚本层、过程工作区层、参考知识库层）的直观说明，帮助初学者在 Markdown 文档资产库中快速定位所需文件。",
+      "progress_status": "completed",
+      "dependent_files": "README.md,需求梳理.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "kk_dependent_files": [
+        "README.md",
+        "需求梳理.md"
+      ]
+    },
+    {
+      "id": "04b52ab6-ad0a-4f38-ae98-36e0c8a0057c",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "团队组织与职责分工",
+      "description": "team-and-responsibilities",
+      "prompt": "基于 README 与需求梳理中的团队信息，编写完整的团队组织与职责分工文档。说明总策划与脚本统筹、现场摄制统筹组、高二主力摄制组、高一协助摄制组、指导老师与口播主持组等角色在当前工程中的职责边界；明确各角色在赛前研判、分镜编写、现场多机位录制、后期剪辑、成品归档与对外发布等环节中的参与方式。结合人员梯队协作关系，给出新人入队建议：高一新成员如何从学生会幕后宣传与基础素材采集入手，高二中坚力量如何承接传统高光混剪与开幕式多机位录制，指导老师如何审核重点赛事转播标准与全社拍摄质量。同时提醒人员信息可能含隐私，外部公开文档应避免直接展示敏感个人数据。",
+      "progress_status": "completed",
+      "dependent_files": "README.md,需求梳理.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 1,
+      "kk_dependent_files": [
+        "README.md",
+        "需求梳理.md"
+      ]
+    },
+    {
+      "id": "bbc73880-6e6b-4f09-9d64-e2c8e677602d",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "工程目录与归档规范",
+      "description": "engineering-conventions",
+      "prompt": "为 2026SportsMeet 工程创建工程目录与归档规范文档，聚焦 Markdown 文档、分镜脚本、拍摄执行手册、BGM 音频与截图类资产的组织方式。详细说明四层组织结构：根级 README 与 AGENTS.md 作为入口与协作规范，需求梳理作为项目总控中枢，成品脚本作为唯一可对外交付的最终脚本接口，视频01~视频04 作为过程工作区，参考视频与参考视频脚本作为风格知识库。解释“过程工作区隔离”和“成品集中归档”两条核心原则，说明为什么草稿只能放在视频工作区，定稿才允许进入成品脚本目录。补充 AI Agent 协作规范的要点：统一语言、统一目录、任务推进流程、禁止跨工作区污染、AI 输出落盘位置约定。给出新增视频与新增参考视频的标准化操作步骤，并列出发布前检查建议（画幅、分辨率、字幕、版权音乐、隐私信息）。",
+      "progress_status": "completed",
+      "dependent_files": "README.md,AGENTS.md,成品脚本/README.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 2,
+      "kk_dependent_files": [
+        "README.md",
+        "AGENTS.md",
+        "成品脚本/README.md"
+      ]
+    },
+    {
+      "id": "a2853fa8-a873-4fc5-88c3-cfdacbb2c6fa",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "项目总控与决策追踪",
+      "description": "project-planning-and-decisions",
+      "prompt": "基于需求梳理.md 编写项目总控与决策追踪文档，将其作为整个工程的单一事实来源摘要。说明四项备选产出方向的筛选过程，最终确定传统高光混剪、学生会幕后宣传片、开幕式多机位实况三项主要产出的原因，以及视频四男子百米奥运解说方案取消的背景。记录人员配置现状、器材现状、校方禁飞无人机后的替代方案（如延长杆加 Pocket 云台相机等地面拍摄策略）、发布渠道与画面规格要求。汇总决策追踪记录的关键条目，包括决策编号、描述、结果与关联文件，并解释这些决策如何影响后续分镜、机位部署与后期剪辑。补充“近期优先推进事项”的执行建议，帮助团队按优先级推进未完成工作。",
+      "progress_status": "completed",
+      "dependent_files": "需求梳理.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 3,
+      "kk_dependent_files": [
+        "需求梳理.md"
+      ]
+    },
+    {
+      "id": "8bafe868-3967-47a7-90aa-4e2b367a757b",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "赛事日程与排班基础",
+      "description": "schedule-and-scheduling",
+      "prompt": "基于运动会竞赛日程表创建赛事日程与排班基础文档，将官方竞赛日程转化为摄制组可用的排班依据。说明竞赛分组、上午下午时段、重点项目（如开幕式方阵进场、接力赛、跳高、跳远、百米决赛等）的时间节点如何影响多机位调度、人员轮班与素材采集计划。给出摄制组如何利用日程表安排开幕式固定机位、重点田径项目跟拍、赛后成绩结算镜头与 BGM 空镜的策略。补充注意事项：赛程临时调整时的信息同步方式、重要决赛项目的冗余机位建议、避免错过关键冲线画面的时间码管理建议。",
+      "progress_status": "completed",
+      "dependent_files": "运动会时间/运动会竞赛日程表.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 4,
+      "kk_dependent_files": [
+        "运动会时间/运动会竞赛日程表.md"
+      ]
+    },
+    {
+      "id": "699b066d-26db-4940-a10e-558794093311",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "视频一：传统高光混剪",
+      "description": "video-01-traditional-highlights",
+      "prompt": "为视频一《传统高光混剪》创建详细文档，覆盖其风格定位、95 秒三段式情感曲线、124 BPM MV 节奏设计、双线交错平行蒙太奇开篇与 Drop 段落的高燃表达。解释成品脚本中的叙事主线与副线如何交替推进，如何通过不同运动项目（田径短跑、接力、跳高、跳远、啦啦操、方阵等）构建视觉节奏，以及 BGM 的视听结构如何在黑场转折处制造情绪切换。提供实操拍摄指南：按运动项目分类说明应该采集哪些镜头类型（全景、中景、特写、升格慢动作、观众反应、教练与裁判反应），并结合安全缓冲区与跑道外沿 1 米红线强调现场安全。补充后期剪辑建议：Final Cut Pro 时间线结构、波形对齐、卡点剪辑、转场与调色思路。说明过程工作区中分镜草案、BGM 选型与工作记录的用途，并给出从草案到成品脚本的评审与迭代流程。",
+      "progress_status": "completed",
+      "dependent_files": "成品脚本/01_传统高光混剪_最终脚本.md,视频01_传统高光混剪/分镜草案_v1.md,视频01_传统高光混剪/BGM视听结构与黑场转折设计说明.md,视频01_传统高光混剪/工作记录.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 5,
+      "kk_dependent_files": [
+        "成品脚本/01_传统高光混剪_最终脚本.md",
+        "视频01_传统高光混剪/分镜草案_v1.md",
+        "视频01_传统高光混剪/BGM视听结构与黑场转折设计说明.md",
+        "视频01_传统高光混剪/工作记录.md"
+      ]
+    },
+    {
+      "id": "c6b66b56-79f9-4dc5-8de0-f1f13b575021",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "视频二：学生会幕后宣传片",
+      "description": "video-02-student-council-bts",
+      "prompt": "为视频二《学生会幕后宣传片》创建策划与分镜文档，聚焦主题“看不见的赛场与奉献”。说明纪实 Vlog 叙事风格如何呈现检录、终点计时、广播站、医疗站、器材搬运、志愿者协调等幕后群像，并解释其与视频一高光混剪在叙事视角上的差异：前者面向观众情绪，后者面向幕后工作者的人文记录。根据现有分镜与策划草案，逐条整理场景、镜头意图、拍摄对象、所需设备、旁白或采访提纲与时间码建议；若部分字段尚未完善，明确标注待办项。补充现场拍摄建议：如何在不干扰比赛的前提下捕捉真实瞬间，如何获取受访者简短口述，如何处理隐私与肖像权问题。说明当前交付状态与后续推进计划，例如如何将策划草案升级为正式分镜脚本，以及如何与视频一、视频三的素材管理保持一致。",
+      "progress_status": "completed",
+      "dependent_files": "视频02_学生会幕后宣传片/学生会幕后宣传片_分镜与策划草案.md,视频02_学生会幕后宣传片/工作记录.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 6,
+      "kk_dependent_files": [
+        "视频02_学生会幕后宣传片/学生会幕后宣传片_分镜与策划草案.md",
+        "视频02_学生会幕后宣传片/工作记录.md"
+      ]
+    },
+    {
+      "id": "c3e7697c-649b-433c-a97f-a553e7584d6a",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "视频三：开幕式多机位实况",
+      "description": "video-03-opening-ceremony-multicam",
+      "prompt": "为视频三《开幕式多机位实况》创建完整的技术与执行文档，说明电视台转播级多机位录制目标：纯地面 5 路定点 + 1 路机动特写架构，确保全校各班级方阵完整收录。详细描述每个机位的位置、设备、任务、视野范围与铁律，解释多机位之间的协同关系与切换逻辑。说明 Final Cut Pro 多机位波形对齐与后期剪辑流程，包括时间码管理、音轨对齐、多视角拼接、备用机位替换与错误帧处理。补充“开幕式精彩小混剪”剪辑思路指南，说明如何从多机位原始素材中提炼出短版高光片段，用于社交媒体传播或校园大屏快放。给出拍摄执行手册的操作清单：开机前检查、同步测试、现场沟通信号、突发状况预案与收工素材备份流程。说明成品脚本与过程工作区的区别，并提供常见问题排查方法，如不同摄像机帧率不一致、音频不同步、机位漏拍某个班级等问题。",
+      "progress_status": "completed",
+      "dependent_files": "成品脚本/03_开幕式多机位实况_最终脚本.md,成品脚本/03_开幕式精彩小混剪_剪辑思路指南.md,视频03_开幕式多机位实况/开幕式现场机位部署与拍摄执行手册.md,视频03_开幕式多机位实况/开幕式多机位协同与实况方案.md,视频03_开幕式多机位实况/开幕式精彩小混剪_剪辑思路指南.md,视频03_开幕式多机位实况/工作记录.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 7,
+      "kk_dependent_files": [
+        "成品脚本/03_开幕式多机位实况_最终脚本.md",
+        "成品脚本/03_开幕式精彩小混剪_剪辑思路指南.md",
+        "视频03_开幕式多机位实况/开幕式现场机位部署与拍摄执行手册.md",
+        "视频03_开幕式多机位实况/开幕式多机位协同与实况方案.md",
+        "视频03_开幕式多机位实况/开幕式精彩小混剪_剪辑思路指南.md",
+        "视频03_开幕式多机位实况/工作记录.md"
+      ]
+    },
+    {
+      "id": "7e9c2d07-e410-4791-a4c6-5ec5f55b0fad",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "视频四：男子百米奥运解说短片（历史归档）",
+      "description": "video-04-historical-archive",
+      "prompt": "为视频四《男子百米奥运解说短片》创建历史归档文档，说明原方案的目标、奥运转播解说风格设想、Photo Finish 鹰眼判定镜头与长焦跟拍构思，以及最终因校方禁飞限制、透视畸变风险与资源冲突而取消的原因。解释相关素材与方案为何被归档而非删除：作为后续类似项目的参考资产，也作为团队决策过程的留痕。对比该方案与视频一传统高光混剪、视频三开幕式多机位实况的差异，说明为何最终决定将男子百米相关素材全量汇入视频一，而不是单独维持一个高风险制作线。补充该方案的存档价值：可用于未来体育特长生短视频、竖屏爆款或赛事直播解说的风格借鉴。",
+      "progress_status": "completed",
+      "dependent_files": "视频04_男子百米奥运解说/男子百米奥运解说短片_全流程方案.md,视频04_男子百米奥运解说/工作记录.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 8,
+      "kk_dependent_files": [
+        "视频04_男子百米奥运解说/男子百米奥运解说短片_全流程方案.md",
+        "视频04_男子百米奥运解说/工作记录.md"
+      ]
+    },
+    {
+      "id": "a6bb3bf0-024f-434d-bb6a-626fc99bfd15",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "成品交付状态总览",
+      "description": "deliverables-status",
+      "prompt": "基于成品脚本 README 与需求梳理，创建成品交付状态总览文档，以矩阵形式清晰呈现四部视频的序号、类型、最终脚本路径、策划状态、成品脚本状态、负责人员与发布渠道。区分“已定稿交付”“待定稿”“已取消归档”等不同状态，并解释状态双向同步机制：当某个视频的过程工作区升级时，需要同步更新成品脚本目录与状态矩阵。补充成品目录归档规范，强调成品脚本目录只容纳经团队确认的终版脚本，严禁放入草稿、半成品或临时文件。给出发布前检查清单，包括横竖屏画幅、分辨率、字幕校对、版权音乐授权、隐私信息清理、文件名与版本号一致性等。",
+      "progress_status": "completed",
+      "dependent_files": "成品脚本/README.md,需求梳理.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 9,
+      "kk_dependent_files": [
+        "成品脚本/README.md",
+        "需求梳理.md"
+      ]
+    },
+    {
+      "id": "96f8fa91-921c-4e96-beb2-6f51cf49e1ef",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "参考视频与风格知识库",
+      "description": "reference-video-knowledge-base",
+      "prompt": "为参考视频与风格知识库创建总览文档，说明仓库中 30 部标杆参考视频与 22 部历届原片逐镜还原脚本的知识资产价值。重点解释五维拆解维度：拍摄脚本、拍摄思路、旁白思路、分镜思路、落地实施建议，并说明这五个维度如何帮助策划、拍摄与剪辑人员复用成熟技法。介绍五维宣发矩阵，按预热期、赛程日、闭幕收官三个阶段划分参考视频的使用场景。说明春戊历届校运会资产的四个分类：历届高光混剪与快剪大片、我们在幕后与学生会纪实、历届开幕式方阵进场与大型展演、历届个人视角与特色探索。给出如何使用该知识库：先根据目标视频风格查找对应编号方案，再对照实际项目的工作区进行改编，而不是照搬。补充新增参考视频的入库流程与命名约定。",
+      "progress_status": "completed",
+      "dependent_files": "参考视频脚本/README.md,参考视频脚本/春戊_历届校运会/README.md,参考视频脚本/春戊_历届校运会/01_历届高光混剪与快剪大片_多模态拆解脚本.md,参考视频脚本/春戊_历届校运会/02_历届我们在幕后与学生会纪实_多模态拆解脚本.md,参考视频脚本/春戊_历届校运会/03_历届开幕式方阵进场与大型展演_多模态拆解脚本.md,参考视频脚本/春戊_历届校运会/04_历届个人视角与特色探索_多模态拆解脚本.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 10,
+      "kk_dependent_files": [
+        "参考视频脚本/README.md",
+        "参考视频脚本/春戊_历届校运会/README.md",
+        "参考视频脚本/春戊_历届校运会/01_历届高光混剪与快剪大片_多模态拆解脚本.md",
+        "参考视频脚本/春戊_历届校运会/02_历届我们在幕后与学生会纪实_多模态拆解脚本.md",
+        "参考视频脚本/春戊_历届校运会/03_历届开幕式方阵进场与大型展演_多模态拆解脚本.md",
+        "参考视频脚本/春戊_历届校运会/04_历届个人视角与特色探索_多模态拆解脚本.md"
+      ]
+    },
+    {
+      "id": "0a8408e3-daf4-4483-be5d-d00da8c4e91e",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "典型参考方案与风格分类",
+      "description": "typical-reference-patterns",
+      "prompt": "基于参考视频脚本集合，创建典型参考方案与风格分类文档，将 30 个编号方案按风格与用途归类为专业赛事直播解说类、高燃卡点混剪类、电视转播与成绩结算类、人文纪录与毕业季风格类、短视频平台爆款类、摄影师幕后与纪实类等类别。对每一类说明其适用场景、典型手法（如奥运转播解说、竖屏爆款、一镜到底、HUD 第一视角、慢门光影、群像叙事等）、可复用的分镜结构与后期包装技巧，并指出与本项目视频一、二、三的直接关联点。为每个类别挑选 2–3 个最具代表性的参考编号，简要概括其拍摄思路、旁白思路与落地实施建议，帮助读者快速判断某个参考方案是否值得在本项目中复用。同时提醒注意版权、平台画幅与设备门槛等现实约束。",
+      "progress_status": "completed",
+      "dependent_files": "参考视频脚本/01_男子100米决赛_奥运转播解说风格脚本.md,参考视频脚本/02_校运会高燃快剪混剪MV风格脚本.md,参考视频脚本/03_肇庆学院校运会高燃卡点快剪脚本.md,参考视频脚本/04_长江大学国旗与田径交错快剪脚本.md,参考视频脚本/05_魔方抽色与青春微记录Vlog脚本.md,参考视频脚本/10_惠东综合实验学校接力赛转播与全流程包装脚本.md,参考视频脚本/11_杭州师范大学融媒体精剪MV脚本.md,参考视频脚本/15_天河中学设问排比式深情纪录片脚本.md,参考视频脚本/16_疏附三中高三女子百米电视转播与成绩结算脚本.md,参考视频脚本/17_五分钟电影级校运会官方全景终极大片脚本.md,参考视频脚本/18_杭州师范大学融媒体学生记者团嘉年华精剪脚本.md,参考视频脚本/19_西北民大NWMU电视台男子百米转播与成绩榜脚本.md,参考视频脚本/20_男子百米破纪录神仙打架竖屏爆款脚本.md,参考视频脚本/21_雾漫时青春治愈风校运慢门光影脚本.md,参考视频脚本/22_北京体育大学4x400米最强决战解说脚本.md,参考视频脚本/23_体育特长生4x100米绝对碾压接力一镜到底脚本.md,参考视频脚本/25_麒中AC摄影社学生纯享热血卡点短片脚本.md,参考视频脚本/26_摄影师监视器HUD第一视角沉浸式拍摄脚本.md,参考视频脚本/27_广州医科大学F1赛车跨界硬核包装脚本.md,参考视频脚本/28_厦门大学第59届学生田径运动会群像脚本.md,参考视频脚本/29_赛场战地摄影师极限机位与花絮纪实脚本.md,参考视频脚本/30_男子跳高1米90背越式极限挑战高光脚本.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 11,
+      "kk_dependent_files": [
+        "参考视频脚本/01_男子100米决赛_奥运转播解说风格脚本.md",
+        "参考视频脚本/02_校运会高燃快剪混剪MV风格脚本.md",
+        "参考视频脚本/03_肇庆学院校运会高燃卡点快剪脚本.md",
+        "参考视频脚本/04_长江大学国旗与田径交错快剪脚本.md",
+        "参考视频脚本/05_魔方抽色与青春微记录Vlog脚本.md",
+        "参考视频脚本/10_惠东综合实验学校接力赛转播与全流程包装脚本.md",
+        "参考视频脚本/11_杭州师范大学融媒体精剪MV脚本.md",
+        "参考视频脚本/15_天河中学设问排比式深情纪录片脚本.md",
+        "参考视频脚本/16_疏附三中高三女子百米电视转播与成绩结算脚本.md",
+        "参考视频脚本/17_五分钟电影级校运会官方全景终极大片脚本.md",
+        "参考视频脚本/18_杭州师范大学融媒体学生记者团嘉年华精剪脚本.md",
+        "参考视频脚本/19_西北民大NWMU电视台男子百米转播与成绩榜脚本.md",
+        "参考视频脚本/20_男子百米破纪录神仙打架竖屏爆款脚本.md",
+        "参考视频脚本/21_雾漫时青春治愈风校运慢门光影脚本.md",
+        "参考视频脚本/22_北京体育大学4x400米最强决战解说脚本.md",
+        "参考视频脚本/23_体育特长生4x100米绝对碾压接力一镜到底脚本.md",
+        "参考视频脚本/25_麒中AC摄影社学生纯享热血卡点短片脚本.md",
+        "参考视频脚本/26_摄影师监视器HUD第一视角沉浸式拍摄脚本.md",
+        "参考视频脚本/27_广州医科大学F1赛车跨界硬核包装脚本.md",
+        "参考视频脚本/28_厦门大学第59届学生田径运动会群像脚本.md",
+        "参考视频脚本/29_赛场战地摄影师极限机位与花絮纪实脚本.md",
+        "参考视频脚本/30_男子跳高1米90背越式极限挑战高光脚本.md"
+      ]
+    },
+    {
+      "id": "3f88a588-e8b9-49d4-80db-ace98283c9ab",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "工作流与协作规范",
+      "description": "workflow-and-collaboration",
+      "prompt": "创建工作流与协作规范文档，将项目中的流程规则沉淀为可执行的团队协作标准。说明过程工作区隔离规则：每个视频对应独立工作区，禁止跨视频随意修改其他工作区文件；成品脚本定稿机制：只有经团队确认的脚本才能移入成品脚本目录；状态双向同步机制：成品脚本目录与交付状态矩阵必须保持一致；AI Agent 任务推进标准流程：接收需求、确认上下文、在工作区产出、不得绕过成品目录、保留变更记录。补充日常协作建议：如何用需求梳理维护事项清单，如何在微信沟通、老师指示与团队共识基础上形成可追溯的决策记录，如何为新成员做入职导读。给出新增视频与新增参考视频的标准操作流程，以及遇到分歧时的升级路径。",
+      "progress_status": "completed",
+      "dependent_files": "AGENTS.md,成品脚本/README.md,README.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 12,
+      "kk_dependent_files": [
+        "AGENTS.md",
+        "成品脚本/README.md",
+        "README.md"
+      ]
+    },
+    {
+      "id": "85bbe062-bd72-40fb-95e3-9d0f80a8fcee",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "术语与基础知识",
+      "description": "glossary-and-concepts",
+      "prompt": "为影视制作非技术背景的团队成员创建术语与基础知识文档，用通俗语言解释本仓库中出现的专业概念。重点解释多机位录制、升格慢动作、双线交错平行蒙太奇、Drop 段落、Final Cut Pro 多机位波形对齐、Photo Finish 鹰眼判定、延长杆加 Pocket 云台相机替代航拍、安全缓冲区与跑道外沿 1 米红线等术语。对每个术语给出定义、在项目中的具体应用场景、常见误区与简化示例，例如：什么是多机位波形对齐、为什么开幕式需要它；为什么禁飞无人机后要用延长杆与地面机位组合；Drop 段落与传统高光混剪的情绪曲线有什么关系。补充初学者阅读顺序建议：先看项目概述与术语，再进入具体视频工作区。",
+      "progress_status": "completed",
+      "dependent_files": "视频01_传统高光混剪/BGM视听结构与黑场转折设计说明.md,视频03_开幕式多机位实况/开幕式现场机位部署与拍摄执行手册.md,需求梳理.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 13,
+      "kk_dependent_files": [
+        "视频01_传统高光混剪/BGM视听结构与黑场转折设计说明.md",
+        "视频03_开幕式多机位实况/开幕式现场机位部署与拍摄执行手册.md",
+        "需求梳理.md"
+      ]
+    },
+    {
+      "id": "1c661c1c-da8e-4804-a0e4-aa571d85b6b8",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "name": "项目演进与后续建议",
+      "description": "project-evolution-and-next-steps",
+      "prompt": "创建项目演进与后续建议文档，总结 2026SportsMeet 目前已完成的规划与待推进事项，重点说明视频二《学生会幕后宣传片》从策划草案升级为正式脚本的计划，以及各视频工作区工作记录的归档建议。提出可复用的模板化改进：为未来校运会抽象出拍摄模板、剪辑模板、机位部署模板与多机位后期模板；为下一届准备《校运会视频制作 SOP》。讨论引入轻量项目管理看板、发布检查表、参考视频入库流程与版本命名约定的改进建议。同时回顾安全红线、成品归档规范与 AI Agent 协作规范在执行中的经验教训，为后续团队提供可迁移的实践参考。",
+      "progress_status": "completed",
+      "dependent_files": "需求梳理.md,成品脚本/README.md",
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z",
+      "order": 14,
+      "kk_dependent_files": [
+        "需求梳理.md",
+        "成品脚本/README.md"
+      ]
+    }
+  ],
+  "wiki_items": [
+    {
+      "id": "4da0be46-3e08-4d15-896e-79e543c7c535",
+      "catalog_id": "4da0be46-3e08-4d15-896e-79e543c7c535",
+      "title": "项目概述与快速开始",
+      "description": "project-overview",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "04b52ab6-ad0a-4f38-ae98-36e0c8a0057c",
+      "catalog_id": "04b52ab6-ad0a-4f38-ae98-36e0c8a0057c",
+      "title": "团队组织与职责分工",
+      "description": "team-and-responsibilities",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "bbc73880-6e6b-4f09-9d64-e2c8e677602d",
+      "catalog_id": "bbc73880-6e6b-4f09-9d64-e2c8e677602d",
+      "title": "工程目录与归档规范",
+      "description": "engineering-conventions",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "a2853fa8-a873-4fc5-88c3-cfdacbb2c6fa",
+      "catalog_id": "a2853fa8-a873-4fc5-88c3-cfdacbb2c6fa",
+      "title": "项目总控与决策追踪",
+      "description": "project-planning-and-decisions",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "8bafe868-3967-47a7-90aa-4e2b367a757b",
+      "catalog_id": "8bafe868-3967-47a7-90aa-4e2b367a757b",
+      "title": "赛事日程与排班基础",
+      "description": "schedule-and-scheduling",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "699b066d-26db-4940-a10e-558794093311",
+      "catalog_id": "699b066d-26db-4940-a10e-558794093311",
+      "title": "视频一：传统高光混剪",
+      "description": "video-01-traditional-highlights",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "c6b66b56-79f9-4dc5-8de0-f1f13b575021",
+      "catalog_id": "c6b66b56-79f9-4dc5-8de0-f1f13b575021",
+      "title": "视频二：学生会幕后宣传片",
+      "description": "video-02-student-council-bts",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "c3e7697c-649b-433c-a97f-a553e7584d6a",
+      "catalog_id": "c3e7697c-649b-433c-a97f-a553e7584d6a",
+      "title": "视频三：开幕式多机位实况",
+      "description": "video-03-opening-ceremony-multicam",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "7e9c2d07-e410-4791-a4c6-5ec5f55b0fad",
+      "catalog_id": "7e9c2d07-e410-4791-a4c6-5ec5f55b0fad",
+      "title": "视频四：男子百米奥运解说短片（历史归档）",
+      "description": "video-04-historical-archive",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "a6bb3bf0-024f-434d-bb6a-626fc99bfd15",
+      "catalog_id": "a6bb3bf0-024f-434d-bb6a-626fc99bfd15",
+      "title": "成品交付状态总览",
+      "description": "deliverables-status",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "96f8fa91-921c-4e96-beb2-6f51cf49e1ef",
+      "catalog_id": "96f8fa91-921c-4e96-beb2-6f51cf49e1ef",
+      "title": "参考视频与风格知识库",
+      "description": "reference-video-knowledge-base",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "0a8408e3-daf4-4483-be5d-d00da8c4e91e",
+      "catalog_id": "0a8408e3-daf4-4483-be5d-d00da8c4e91e",
+      "title": "典型参考方案与风格分类",
+      "description": "typical-reference-patterns",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "3f88a588-e8b9-49d4-80db-ace98283c9ab",
+      "catalog_id": "3f88a588-e8b9-49d4-80db-ace98283c9ab",
+      "title": "工作流与协作规范",
+      "description": "workflow-and-collaboration",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "85bbe062-bd72-40fb-95e3-9d0f80a8fcee",
+      "catalog_id": "85bbe062-bd72-40fb-95e3-9d0f80a8fcee",
+      "title": "术语与基础知识",
+      "description": "glossary-and-concepts",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    },
+    {
+      "id": "1c661c1c-da8e-4804-a0e4-aa571d85b6b8",
+      "catalog_id": "1c661c1c-da8e-4804-a0e4-aa571d85b6b8",
+      "title": "项目演进与后续建议",
+      "description": "project-evolution-and-next-steps",
+      "extend": "{}",
+      "progress_status": "completed",
+      "repo_id": "29817b1c-3f8d-a95c-b134-27c9ce671637",
+      "reference_count": 0,
+      "gmt_create": "2026-10-06T14:20:49Z",
+      "gmt_modified": "2026-10-06T14:20:49Z"
+    }
+  ],
+  "knowledge_relations": []
+}

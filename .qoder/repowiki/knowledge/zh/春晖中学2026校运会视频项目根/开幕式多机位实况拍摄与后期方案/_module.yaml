@@ -1,0 +1,25 @@
+schema_version: 1
+module_path: video03_opening_ceremony_multicam
+title: 开幕式多机位实况拍摄与后期方案
+scope:
+    - 视频03_开幕式多机位实况/
+source_files: []
+depends_on: []
+related_to:
+    - path: final_scripts
+      reason: 开幕式多机位实况拍摄方案文档是 final_scripts 成品脚本归档中开幕式的对应制作过程资产，二者指向同一视频的策划与定稿。
+kk_module_id: 9e232688-9048-414a-8892-73021abecdb9
+kk_ordinal: 3
+kk_cards:
+    architecture_design:
+        id: bc479a82-169e-4af2-9b0f-d81aa936681d
+        title: 开幕式多机位实况拍摄与后期方案
+    coding_conventions:
+        id: 0c9164d6-5936-4e1a-964b-c9268836e456
+        title: 开幕式多机位实况拍摄与后期方案
+    overview:
+        id: 66a50786-3b06-418a-a187-d60d7227cf97
+        title: 开幕式多机位实况拍摄与后期方案
+    unique_setup_and_commands:
+        id: e2a3698e-7baa-4e77-ad80-e71c261bf93a
+        title: 开幕式多机位实况拍摄与后期方案

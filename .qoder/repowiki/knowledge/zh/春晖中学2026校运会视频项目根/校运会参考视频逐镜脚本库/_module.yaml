@@ -1,0 +1,24 @@
+schema_version: 1
+module_path: reference_videos_scripts
+title: 校运会参考视频逐镜脚本库
+scope:
+    - 参考视频脚本/
+source_files: []
+depends_on: []
+related_to:
+    - path: video01_traditional_highlight_mix
+      reason: 传统高光混剪 MV 的分镜与 BGM 工程策划以参考视频脚本库中的逐镜还原模板为制作依据，二者构成成品脚本与其参考素材的关系。
+kk_module_id: 23a1c09a-acae-4542-96e8-2ab1f54495de
+kk_cards:
+    architecture_design:
+        id: 79166289-c5f5-4120-8ae7-2e1417819fb7
+        title: 校运会参考视频逐镜脚本库
+    coding_conventions:
+        id: 391d45b8-55f5-4b1f-87ce-df6d1afa773b
+        title: 校运会参考视频逐镜脚本库
+    overview:
+        id: 17145e75-5189-4533-bcd3-105bdf8df4ca
+        title: 校运会参考视频逐镜脚本库
+    tech_stack:
+        id: 609db2cd-c73b-411f-8c17-8d12dfd12293
+        title: 校运会参考视频逐镜脚本库

@@ -1,0 +1,26 @@
+schema_version: 1
+module_path: video01_traditional_highlight_mix
+title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+scope:
+    - 视频01_传统高光混剪/
+source_files: []
+depends_on: []
+related_to: []
+kk_module_id: eb1a8454-72a5-4898-b0e4-eb442e275393
+kk_ordinal: 2
+kk_cards:
+    architecture_design:
+        id: 4b174bc6-30a4-4de5-ac94-ded7c2a1ef40
+        title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+    coding_conventions:
+        id: fde375d9-fe53-4bfe-8db8-cf4daaf395b2
+        title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+    overview:
+        id: 86e9a303-a388-410f-a8e9-e861f96e76c2
+        title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+    tech_stack:
+        id: 81752ae4-cb3c-475a-a9c2-eb404ccfaff8
+        title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+    unique_setup_and_commands:
+        id: ef6ffe0a-485e-4f89-8ca5-e0740a2b33c4
+        title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划

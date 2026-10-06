@@ -1,0 +1,21 @@
+schema_version: 1
+module_path: root
+title: 春晖中学2026校运会视频项目根
+scope:
+    - README.md
+    - .gitignore
+    - .gitattributes
+source_files: []
+depends_on: []
+related_to: []
+kk_module_id: 331e880a-0d0d-439f-a3be-82bc203b1c28
+kk_cards:
+    architecture_design:
+        id: fb93be12-1c4a-47cf-8feb-539242d96550
+        title: 春晖中学2026校运会视频项目根
+    coding_conventions:
+        id: 39db5381-0c27-4198-984d-32eecf6a9150
+        title: 春晖中学2026校运会视频项目根
+    overview:
+        id: 2906e64e-894b-4248-be6c-8d3cc372459d
+        title: 春晖中学2026校运会视频项目根

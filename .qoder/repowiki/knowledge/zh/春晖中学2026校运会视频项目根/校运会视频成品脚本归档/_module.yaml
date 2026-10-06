@@ -1,0 +1,25 @@
+schema_version: 1
+module_path: final_scripts
+title: 校运会视频成品脚本归档
+scope:
+    - 成品脚本/
+source_files: []
+depends_on: []
+related_to:
+    - path: video01_traditional_highlight_mix
+      reason: video01_传统高光混剪目录是最终定稿脚本归档（final_scripts）中四部核心视频之一的制作过程资产，二者为同一视频从策划到成品的上下游关系。
+kk_module_id: af7cdf85-2805-4141-953d-43cf5c66109d
+kk_ordinal: 1
+kk_cards:
+    architecture_design:
+        id: 15c1a9ba-5b26-4297-8b19-bf24c5e0fa58
+        title: 校运会视频成品脚本归档
+    coding_conventions:
+        id: 18bb8463-29f7-4ffc-93f0-531b1e762d68
+        title: 校运会视频成品脚本归档
+    overview:
+        id: 7784d81d-82ef-411e-9fb0-e6198341ed22
+        title: 校运会视频成品脚本归档
+    unique_setup_and_commands:
+        id: aca82a23-ff99-4e05-9f77-fc40f9149d77
+        title: 校运会视频成品脚本归档

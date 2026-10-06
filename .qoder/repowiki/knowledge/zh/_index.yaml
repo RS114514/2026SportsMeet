@@ -1,0 +1,64 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+commit: f1aae38afab6a0d4fc4d89c6ebc5b9c293e1fada
+branch: main
+exported_at: "2026-10-06T14:15:43Z"
+modules:
+    final_scripts:
+        dir_name: 校运会视频成品脚本归档
+        title: 校运会视频成品脚本归档
+        scope:
+            - 成品脚本/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: video01_traditional_highlight_mix
+              reason: video01_传统高光混剪目录是最终定稿脚本归档（final_scripts）中四部核心视频之一的制作过程资产，二者为同一视频从策划到成品的上下游关系。
+    reference_videos_scripts:
+        dir_name: 校运会参考视频逐镜脚本库
+        title: 校运会参考视频逐镜脚本库
+        scope:
+            - 参考视频脚本/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: video01_traditional_highlight_mix
+              reason: 传统高光混剪 MV 的分镜与 BGM 工程策划以参考视频脚本库中的逐镜还原模板为制作依据，二者构成成品脚本与其参考素材的关系。
+    root:
+        dir_name: 春晖中学2026校运会视频项目根
+        title: 春晖中学2026校运会视频项目根
+        scope:
+            - README.md
+            - .gitignore
+            - .gitattributes
+        source_files: []
+        children:
+            - final_scripts
+            - reference_videos_scripts
+            - video01_traditional_highlight_mix
+            - video03_opening_ceremony_multicam
+        depends_on: []
+        related_to: []
+    video01_traditional_highlight_mix:
+        dir_name: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+        title: 校运会传统高光混剪 MV 分镜与 BGM 工程策划
+        scope:
+            - 视频01_传统高光混剪/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    video03_opening_ceremony_multicam:
+        dir_name: 开幕式多机位实况拍摄与后期方案
+        title: 开幕式多机位实况拍摄与后期方案
+        scope:
+            - 视频03_开幕式多机位实况/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: final_scripts
+              reason: 开幕式多机位实况拍摄方案文档是 final_scripts 成品脚本归档中开幕式的对应制作过程资产，二者指向同一视频的策划与定稿。
