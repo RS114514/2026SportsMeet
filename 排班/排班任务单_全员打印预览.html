@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>2026 春晖中学校运会摄制任务单 · 全员排班</title>
+
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 100%;
+    height: 279mm;
+    max-height: 279mm;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748b;
+    margin-bottom: 2px;
+  }
+  .school-tag {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #0369a1;
+  }
+  .badge {
+    display: inline-block;
+    padding: 1px 6px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+  }
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .main-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+  }
+  .person-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .person-name {
+    font-size: 19px;
+    color: #0284c7;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .grade-badge {
+    font-size: 11px;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    font-weight: 600;
+  }
+
+  /* Warning Box */
+  .warning-box {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    border-top: 1px solid #ffe4e6;
+    border-right: 1px solid #ffe4e6;
+    border-bottom: 1px solid #ffe4e6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 5px;
+  }
+  .warning-title {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #be123c;
+    margin-bottom: 2px;
+  }
+  .warning-item {
+    font-size: 10px;
+    color: #9f1239;
+    line-height: 1.35;
+    margin-left: 2px;
+  }
+
+  /* Table Section */
+  .table-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 11px;
+    background: #0284c7;
+    border-radius: 2px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
+  }
+  th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    text-align: left;
+    padding: 4px 5px;
+    border: 1px solid #cbd5e1;
+    font-size: 10px;
+  }
+  td {
+    padding: var(--cell-pad, 4px 5px);
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+    line-height: var(--lh, 1.32);
+    color: #334155;
+    word-break: break-word;
+  }
+  tr:nth-child(even) td {
+    background: #fafbfc;
+  }
+  
+  .col-time {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .col-event {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .col-partner {
+    font-weight: 700;
+    color: #0369a1;
+  }
+  .col-guide {
+    color: #1e293b;
+  }
+
+  .time-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 1px;
+  }
+  .guide-tag {
+    color: #0369a1;
+    font-weight: 700;
+  }
+  .highlight-fire {
+    color: #e11d48;
+    font-weight: 800;
+  }
+
+  /* Rules Box (Footer) */
+  .footer-wrapper {
+    margin-top: auto;
+  }
+  .footer-rules {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 5px 8px;
+  }
+  .rules-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    font-size: 9px;
+    line-height: 1.32;
+    color: #334155;
+  }
+  .rule-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 3px 5px;
+  }
+  .rule-num {
+    font-weight: 700;
+    color: #0284c7;
+    margin-bottom: 1px;
+    display: block;
+    font-size: 9.5px;
+  }
+  .rule-item code {
+    background: #f1f5f9;
+    padding: 0 2px;
+    border-radius: 2px;
+    font-family: ui-monospace, monospace;
+    font-size: 8.5px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.5px;
+    color: #94a3b8;
+    margin-top: 3px;
+  }
+</style>
+
+</head>
+<body>
+
+    <div class="page" id="page-1">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">连辰毅</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 4px 5px; --lh: 1.32;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">15:10 - 16:10</span></td>
+          <td class="col-event"><strong>高三女子 跳高 决赛（13人）</strong></td>
+          <td class="col-spot">跳高横杆下方偏侧大仰角，以纯净蓝天与树梢为背景</td>
+          <td class="col-partner">丁子妍</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弧线跟随上摇至横杆上方】</span><br>• 视频：1080p 120fps（快门 1/250s），随助跑起跳平稳上摇并在背越瞬间悬停，记录身体紧贴横杆上方掠过的优美弧线与裁判举白旗确认；<br>• 照片：快门 1/800s，抓拍背越式过杆身体呈反弓型紧贴横杆上方的绝美姿态，背景纯净无杂物。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">07:50 - 08:50</span></td>
+          <td class="col-event"><strong>高二男子 跳远 决赛（30人）</strong></td>
+          <td class="col-spot">沙坑尽头超低贴地（离沙坑 10 公分，套保鲜膜保护机身），大仰角对准助跑道</td>
+          <td class="col-partner">金煜豪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：低位静候 + 飞沙扑面】</span><br>• 视频：1080p 120fps（快门 1/250s），广角 16-35mm 贴地固定，等待选手从远处冲刺飞入画面并在镜头前爆起金沙，记录金色沙粒炸散漫天扑向镜头；<br>• 照片：快门 1/1600s 伺服对焦，展腹最高点静止定格，双臂如羽翼展开，定格起飞瞬间脚尖紧绷与双脚落坑瞬间飞沙飞溅的力学大片。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">14:30 - 15:30</span></td>
+          <td class="col-event"><strong>高二男子 跳高 决赛（26人）</strong></td>
+          <td class="col-spot">跳高海绵垫侧面与横杆延长线，以看台人群为虚化背景</td>
+          <td class="col-partner">金煜豪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：过杆悬停 + 落地抓拍】</span><br>• 视频：1080p 120fps 记录选手挑战 1米75 以上极限高度，横杆轻微晃动而不落的心跳时刻；<br>• 照片：高速抓拍过杆后落入海绵垫瞬间的双臂振臂欢呼与全场起立鼓掌。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:00 - 09:00</span></td>
+          <td class="col-event"><strong>高三男子 跳高 决赛（26人）</strong></td>
+          <td class="col-spot">横杆正下方偏侧大仰角</td>
+          <td class="col-partner">金煜豪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：跳跃弧线跟随】</span><br>• 视频：1080p 120fps 记录高中最后一届跳高较量，捕捉起跳背越反弓与过杆悬停；<br>• 照片：抓拍起跳蹬地瞬间小腿肌肉紧绷与背越过杆剪影。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">12:50 - 15:00</span></td>
+          <td class="col-event"><strong>各年级 4×400米 混合接力大决战</strong></td>
+          <td class="col-spot">主席台前直道与接力交接区</td>
+          <td class="col-partner">高一/高二全员协同</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：全场狂飙跟摇】</span><br>• 视频：1080p 120fps 记录每一棒 400 米脱水式狂奔、外道暴力超车及冲过终点双膝跪地庆祝；<br>• 照片：抓拍队友在跑道上抱成一团、高举接力棒庆祝的大场面。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 1 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-2">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">徐清来</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 9.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 3px 4px; --lh: 1.28;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">14:40 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 100米 预赛</strong></td>
+          <td class="col-spot">跑道外沿安全缓冲区贴地 10 公分，终点外侧长焦正迎面</td>
+          <td class="col-partner">莫佩祥、冯翼</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：滑板车平行跟拍 + 终点锁焦】</span><br>• 视频：1080p 120fps（快门 1/250s），手持稳定器踩滑板车在跑道外沿平移跟随起跑加速，终点锁焦冲线肌肉震颤；<br>• 照片：快门 1/1600s 伺服对焦，发令枪响第一步蹬地爆发腿部肌肉紧绷定格；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：14:40 高一男第4组第3道陈怀恒起跑与直道狂飙！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:25 - 17:30</span></td>
+          <td class="col-event"><strong>高二/高三 女子 仰卧起坐团体比赛</strong></td>
+          <td class="col-spot">垫子一字排开侧面低角度与排面平视全景</td>
+          <td class="col-partner">独立机位</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：横向平移推轨】</span><br>• 视频：4K 60fps 沿垫子横向平移，记录全排垫子齐刷刷上下起伏、同班同学死死压住脚踝大声报数鼓励的宏大群像；<br>• 照片：抓拍按脚同学与做动作同学眼神对视加油的温情抓拍，以及做完后脱力仰面大笑的特写。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">10:10 - 10:40</span></td>
+          <td class="col-event"><strong>100米总决赛（飞人巅峰对决）及颁奖</strong></td>
+          <td class="col-spot">终点线正迎面低机位与终点线侧向微距</td>
+          <td class="col-partner">莫佩祥、冯翼（协同颁奖组）</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：迎面极速抓冲线 + 侧向升格】</span><br>• 视频：1080p 120fps 超长焦迎面压缩景深，锁死前三名毫厘之差冲线瞬间；<br>• 照片：快门 1/2000s 抓拍红色终点缎带贴在胸膛上崩断撕裂的瞬间特写，以及夺冠后双拳紧握仰天长啸的决定性瞬间。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">14:30 - 15:05</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 200米 预赛</strong></td>
+          <td class="col-spot">弯道切入直道处低角度，跑道外沿平移视角</td>
+          <td class="col-partner">傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大倾角内倾跟踪】</span><br>• 视频：1080p 120fps 镜头随选手大弧度身体内倾平稳切入直道，捕捉抗离心力暴力内切；<br>• 照片：1/30s~1/60s 追随慢门摇拍（跑道拉丝虚化，奔跑身影清晰锐利）；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：14:30 重点抓拍高一男第5组第3道陈怀恒弯道超车！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">15:20 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 200米 预赛</strong></td>
+          <td class="col-spot">出弯道直道与终点线冲刺区</td>
+          <td class="col-partner">傅佳雪、陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：出弯切线平移 + 终点锁焦】</span><br>• 视频：1080p 120fps 记录女飞人们弯道内倾与最后直道全力冲刺；<br>• 照片：快门 1/1600s 抓拍出弯加速瞬间发丝飞扬；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：15:35 重点抓拍高二女第1组第2道沈栋忆起跑、弯道与撞线！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">10:00 - 10:25</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 200米 决赛</strong></td>
+          <td class="col-spot">终点正面迎面长焦与冲刺区侧面</td>
+          <td class="col-partner">傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道切入 + 冲线挥拳】</span><br>• 视频：1080p 120fps 捕捉半程飞人决胜刻，记录冠军冲破红绸带后怒吼挥拳或双膝跪地庆祝；<br>• 照片：抓拍冠军撞线瞬间高举双手的胜利大片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 2 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-3">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">冯翼</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">14:40 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 100米 预赛</strong></td>
+          <td class="col-spot">终点线延长线正前方长焦视角（70-200mm / 100-400mm）</td>
+          <td class="col-partner">莫佩祥、徐清来</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：迎面极慢推进】</span><br>• 视频：1080p 120fps 超长焦迎面压缩景深，随选手前奔保持对焦在第一集团面部，记录8位选手并驾齐驱直道争夺、大臂疯狂摆动、汗水甩飞；<br>• 照片：快门 1/1600s，70-200mm 正迎面压缩景深，抓拍三足鼎立冲刺面部紧绷与前倾压线的一瞬。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">10:10 - 10:40</span></td>
+          <td class="col-event"><strong>100米总决赛（飞人巅峰决战）</strong></td>
+          <td class="col-spot">看台顶层最高层/终点正面超长焦视角</td>
+          <td class="col-partner">莫佩祥、徐清来</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：长焦高位压缩景深】</span><br>• 视频：1080p 120fps 高位大俯拍捕捉全场起跑齐头并进与终点红缎带断裂；<br>• 照片：抓拍飞人大决战终点线前三名毫厘争夺大景与全场沸腾欢呼。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">12:50 - 15:00</span></td>
+          <td class="col-event"><strong>各年级 4×400米 混合接力大决战</strong></td>
+          <td class="col-spot">看台长焦大俯拍与终点迎面视角</td>
+          <td class="col-partner">高一/高二全员协同</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：全场狂飙跟摇 + 终点抓绝杀】</span><br>• 视频：1080p 120fps 看台长焦锁死长距离拉锯，终点长焦锁死最后50米大逆转绝杀；<br>• 照片：最后一棒冲过终点双膝跪地、仰天长啸，全班同学飞奔围上的历史性大片！</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 3 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-4">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">汪清晏</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 4px 5px; --lh: 1.32;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">15:10 - 16:10</span></td>
+          <td class="col-event"><strong>高二男子 铅球 / 立定跳远 决赛</strong></td>
+          <td class="col-spot">投掷圈后方 45° 仰拍；落地点侧前方长焦视角</td>
+          <td class="col-partner">池雨曦</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：旋转跟摇 + 砸地特写】</span><br>• 视频：1080p 120fps 随滑步旋转平稳摇摄，球出手后瞬间切落地点泥浆飞溅；<br>• 照片：快门 1/1000s 抓拍推球离手手臂完全伸直、五指外展、青筋毕露的力学大片；立跳侧面低角度抓拍腾空收腹轻巧着地。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:10 - 16:40</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 400米 决赛</strong></td>
+          <td class="col-spot">弯道内侧大仰角；终点线外侧低机位</td>
+          <td class="col-partner">石虞涵、陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大幅内倾跟随 + 终点不关机长录】</span><br>• 视频：1080p 120fps 贴地仰拍弯道身体对抗离心力，最后100米直道体力极点咬紧牙关，撞线后贴身抓拍脱力扑倒在地与同伴飞奔搀扶；<br>• 照片：抓拍冲刺最后10米面部坚毅神情大特写与瘫倒在草坪上同伴递水拍背的温情抓拍。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">07:50 - 08:50</span></td>
+          <td class="col-event"><strong>高一女子铅球 / 跳高 专项</strong></td>
+          <td class="col-spot">投掷区后方仰拍与海绵垫侧面</td>
+          <td class="col-partner">陈佳炜、朱烨恒</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：爆发瞬间推拉】</span><br>• 视频：1080p 120fps 记录推球瞬间发力与铅球落地砸出泥坑特写；<br>• 照片：抓拍选手出手后仰天大笑与跳高试跳成功后全场起立鼓掌。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">09:20 - 09:40</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 400米 决赛</strong></td>
+          <td class="col-spot">弯道切线与终点低机位</td>
+          <td class="col-partner">石虞涵</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道跟踪切入终点】</span><br>• 视频：1080p 120fps 跟踪选手大步狂追与弯道超车，冲线后不关机长录；<br>• 照片：快门 1/1600s 抓拍冲线后弯腰扶膝大口喘气、长发滴汗的毅力特写与同伴拥抱。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:40 - 09:10</span></td>
+          <td class="col-event"><strong>各年级男子 1000米 决赛</strong></td>
+          <td class="col-spot">裁判台铜钟特写；草坪内圈低角度仰拍；终点低位</td>
+          <td class="col-partner">陈怀恒、茅熠奇、莫佩祥</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：摇铃特写 + 伴跑跟摇 + 终点不关机】</span><br>• 视频：1080p 120fps 记录裁判摇响最后一圈铜钟“铛——铛——”特写、内圈同学扯嗓狂奔伴跑递节奏、终点扑倒被同伴架扶；<br>• 照片：抓拍额头汗珠甩成水滴咬紧牙关大特写，以及内圈挥旗同窗同框奔跑经典照片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 4 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-5">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">金煜豪</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 4px 5px; --lh: 1.32;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">15:10 - 16:10</span></td>
+          <td class="col-event"><strong>高一男子 跳远 决赛（37人）</strong></td>
+          <td class="col-spot">沙坑尽头超低贴地（离沙坑 10 公分，套保鲜膜），大仰角对准助跑道</td>
+          <td class="col-partner">丁子妍</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：低位静候 + 飞沙扑面】</span><br>• 视频：1080p 120fps 广角 16-35mm 镜头固定在沙坑尽头，等待选手从远处飞入画面并在镜头前爆起金沙；<br>• 照片：快门 1/1600s，展腹最高点静止定格，双臂如羽翼展开，抓拍双脚砸入沙坑金色沙粒漫天炸散扑向镜头的高速大片。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:10 - 17:00</span></td>
+          <td class="col-event"><strong>高二女子 跳远 决赛（22人）</strong></td>
+          <td class="col-spot">沙坑侧面中景与沙坑尽头广角仰拍双机位</td>
+          <td class="col-partner">丁子妍（协同顶岗）</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：双机位包夹 + 专机盯防】</span><br>• 视频：1080p 120fps 全程专机记录第19签沈栋忆踏准白板腾空、空中收腹展体与落沙全过程；<br>• 照片：抓拍沈栋忆腾空大片与爬出沙坑后笑着拍打校服泥沙的生动纪实花絮。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">07:50 - 08:50</span></td>
+          <td class="col-event"><strong>高二男子 跳远 决赛（30人）</strong></td>
+          <td class="col-spot">沙坑侧面中景与起跳踏板延长线</td>
+          <td class="col-partner">连辰毅</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：跳跃弧线跟随】</span><br>• 视频：1080p 120fps 捕捉助跑踏板瞬间脚尖紧绷与空中腾跃；<br>• 照片：快门 1/1600s 抓拍踏板起飞瞬间的力学美感与沙坑腾跃定格。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">13:40 - 14:20</span></td>
+          <td class="col-event"><strong>高二年级 50米团体 A/B 组</strong></td>
+          <td class="col-spot">起跑线正前方平视低机位，超宽构图</td>
+          <td class="col-partner">独立大排面机位</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：齐步迎面推进】</span><br>• 视频：4K 60fps 超广角 16-35mm 记录 12 人横排狂飙，手臂摆动整齐如划桨，气势磅礴；<br>• 照片：超广角正前方抓拍 12 位男生并排腾空向前暴冲的磅礴排面大片。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:00 - 09:00</span></td>
+          <td class="col-event"><strong>高三男子 跳远 决赛（32人）</strong></td>
+          <td class="col-spot">沙坑侧面与尽头低视角</td>
+          <td class="col-partner">连辰毅</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：低位静候 + 飞沙扑面】</span><br>• 视频：1080p 120fps 记录高三男子跳远大展宏图；<br>• 照片：抓拍男子跳远大鹏展翅定格与落地金沙翻滚。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 5 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-6">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">石虞涵</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 5px 6px; --lh: 1.35;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:10 - 16:40</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 400米 决赛</strong></td>
+          <td class="col-spot">弯道内侧大仰角与出弯直道</td>
+          <td class="col-partner">汪清晏、陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大幅内倾跟随】</span><br>• 视频：1080p 120fps 贴地仰拍弯道身体对抗离心力，最后100米直道体力极点紧咬牙关冲刺；<br>• 照片：快门 1/1600s 抓拍冲刺最后10米面部坚毅神情大特写。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">09:20 - 09:40</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 400米 决赛</strong></td>
+          <td class="col-spot">弯道切线与终点低机位</td>
+          <td class="col-partner">汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道跟踪切入终点】</span><br>• 视频：1080p 120fps 跟踪女孩后程耐力死拼与弯道超车，冲线后不关机长录；<br>• 照片：抓拍冲线后弯腰扶膝大口喘气、同班女生上前拥抱感人画面。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">16:10 - 17:00</span></td>
+          <td class="col-event"><strong>各年级 4×100米 接力总决赛（接力区）</strong></td>
+          <td class="col-spot">埋伏在 3-4 棒交接区外侧 45° 仰视视角</td>
+          <td class="col-partner">沈栋忆（负责终点线）</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：交接区定焦预备 + 升格抓交接】</span><br>• 视频：1080p 120fps 镜头定焦在交接区，三棒全速压进、四棒盲跑回头伸手、接力棒下压拍入掌心脆响极慢回放；<br>• 照片：快门 1/1600s 伺服对焦，抓拍两只手在全速奔跑中同时紧握红蓝战棒的瞬间，以及掉棒但反手捞起绝命狂追的惊险瞬间。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">12:50 - 15:00</span></td>
+          <td class="col-event"><strong>各年级 4×400米 混合接力大决战</strong></td>
+          <td class="col-spot">接力交接区与直道交界</td>
+          <td class="col-partner">高一/高二全员协同</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：全场狂飙跟摇】</span><br>• 视频：1080p 120fps 记录2男2女全场压轴较量、跌宕起伏的交接与大逆转冲线；<br>• 照片：抓拍四位队友高举接力棒相拥庆祝合影。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 6 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-7">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">丁子妍</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+        <div class="warning-box">
+          <div class="warning-title">⚠️ 【个人单项参赛避让机制】请务必提前 30 分钟向同组搭档交接器材并离岗检录！</div>
+          <div class="warning-item">• <strong>参赛项目</strong>：10日 09:25 高一女 800m 决赛（第 1 组 第 6 位，提前至 08:55 离岗检录，由沈栋忆、董欣瑜专机抓拍）</div>
+        </div>
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 4px 5px; --lh: 1.32;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">15:10 - 16:10</span></td>
+          <td class="col-event"><strong>高三女子 跳高 决赛（13人）</strong></td>
+          <td class="col-spot">跳高横杆下方偏侧大仰角</td>
+          <td class="col-partner">连辰毅</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弧线跟随上摇至横杆上方】</span><br>• 视频：1080p 120fps 记录助跑起跳反弓背越横杆，在横杆上方悬停瞬间；<br>• 照片：快门 1/800s 抓拍背越式过杆优美姿态与试跳成功后全场掌声。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:10 - 17:00</span></td>
+          <td class="col-event"><strong>高二女子 跳远 决赛（22人）</strong></td>
+          <td class="col-spot">沙坑侧面中景与起跳踏板延长线</td>
+          <td class="col-partner">金煜豪（顶岗协同）</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：双机包夹顶岗拍摄】</span><br>• 视频：1080p 120fps 顶岗拍摄沙坑赛况，并专机盯防沈栋忆（第19签）助跑踏板、腾空与落沙全过程；<br>• 照片：抓拍沈栋忆空中展体定格与赛后笑着拍打身上沙子的纪实花絮。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">07:50 - 08:30</span></td>
+          <td class="col-event"><strong>高一男 50米团体 A/B 组</strong></td>
+          <td class="col-spot">看台前直道正前方平视，超宽构图</td>
+          <td class="col-partner">独立机位</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：中心迎面极慢后退】</span><br>• 视频：4K 60fps 超广角 16-35mm 站在终点后方低位，拍摄 12 人横排狂飙迎面压进、操场扬尘；<br>• 照片：超广角正前方捕捉 12 位小伙并排腾空向前暴冲的磅礴排面。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:55 - 09:35</span></td>
+          <td class="col-event"><strong>高一女 800米 决赛（参赛避让）</strong></td>
+          <td class="col-spot">800米跑道</td>
+          <td class="col-partner">沈栋忆、董欣瑜</td>
+          <td class="col-guide">08:55 准时向沈栋忆交接设备前往检录参赛。由沈栋忆、董欣瑜专机记录参赛全过程，撞线后同伴迅速上前递水拥抱。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 7 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-8">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">莫佩祥</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 5px 6px; --lh: 1.35;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">14:40 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 100米 预赛</strong></td>
+          <td class="col-spot">跑道外沿安全区贴地 10 公分；终点外侧长焦</td>
+          <td class="col-partner">徐清来、冯翼</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：滑板车平行跟拍 + 终点锁焦】</span><br>• 视频：1080p 120fps 侧向跟跑起跑加速，终点锁焦冲线肌肉震颤；<br>• 照片：快门 1/1600s 抓拍发令枪白烟冒出蹬离起跑器第一步；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：14:40 重点抓拍高一男第4组第3道陈怀恒起跑与直道狂飙！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">10:10 - 10:40</span></td>
+          <td class="col-event"><strong>100米总决赛（巅峰决战）</strong></td>
+          <td class="col-spot">终点线侧向微距视角</td>
+          <td class="col-partner">徐清来、冯翼</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：侧向升格 + 终点锁死】</span><br>• 视频：1080p 120fps 锁死红绸带被胸口撞断极慢回放；<br>• 照片：快门 1/2000s 定格冠军撞线双拳紧握仰天怒吼与裁判举白旗确认。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:40 - 09:10</span></td>
+          <td class="col-event"><strong>男子 1000米 决赛</strong></td>
+          <td class="col-spot">草坪内圈低角度仰拍与终点线</td>
+          <td class="col-partner">陈怀恒、茅熠奇、汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：伴跑跟摇 + 终点不关机】</span><br>• 视频：1080p 120fps 低位伴随内圈挥旗伴跑，冲线后贴身抓拍倒地与搀扶；<br>• 照片：快门 1/1600s 抓拍额头汗珠甩成水滴、眼神坚毅咬紧牙关大特写。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全赛程剪辑时段</span></td>
+          <td class="col-event"><strong>社团机房剪辑工作站协同剪辑</strong></td>
+          <td class="col-spot">社团机房剪辑工作站</td>
+          <td class="col-partner">鲍奕帆、傅梓浩</td>
+          <td class="col-guide"><span class="guide-tag">【剪辑协同】</span>协助鲍奕帆、傅梓浩整理 100m 预赛与千米长跑素材，粗选打星高光片段快速导入工程。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 8 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-9">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">池雨曦</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">15:10 - 16:10</span></td>
+          <td class="col-event"><strong>高二男 铅球 / 立定跳远 决赛</strong></td>
+          <td class="col-spot">投掷圈后方 45° 仰拍与立跳侧面低角度</td>
+          <td class="col-partner">汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：旋转跟摇 + 起跳收腹跟拍】</span><br>• 视频：1080p 120fps 记录铅球滑步蓄力到出手青筋毕露与重球砸进草地泥浆飞溅；<br>• 照片：快门 1/1000s 抓拍手臂伸直五指外展的力学大片，立跳抓拍腾空收腹轻巧着地。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">14:30 - 15:30</span></td>
+          <td class="col-event"><strong>田赛立跳抓拍 / 学生会跟拍</strong></td>
+          <td class="col-spot">田赛场地与学生会服务点</td>
+          <td class="col-partner">傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：主观微推 + 纪实抓拍】</span><br>• 视频：4K 60fps 记录立定跳远起跳爆发与学生会现场检录、广播台念稿工作花絮；<br>• 照片：抓拍学生会干事工作证特写与赛场志愿服务生动笑脸。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全赛程时段</span></td>
+          <td class="col-event"><strong>学生会幕后工作宣传片（Vlog）全程跟拍</strong></td>
+          <td class="col-spot">田径场大门、器材室、检录处、广播台、看台各区域</td>
+          <td class="col-partner">傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：POV 第一视角 + 纪实长镜】</span><br>• 视频：4K 60fps 追踪晨光就位、大竹扫帚扫跑道露水、挂工作证、搬运重器栏架、赛后清场收帐篷全过程；<br>• 照片：抓拍胸前蓝色工作证特写（带折痕）、夕阳下收拾水瓶与器材室闭门静物大片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 9 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-10">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">陈佳炜</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 5px 6px; --lh: 1.35;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:10 - 16:40</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 400米 决赛（14组）</strong></td>
+          <td class="col-spot">直道出弯处中景与终点线</td>
+          <td class="col-partner">石虞涵、汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道跟踪切入直道】</span><br>• 视频：1080p 120fps 记录选手体力极点面部表情与最后直道拼死加速；<br>• 照片：快门 1/1600s 抓拍冲刺最后10米面部坚毅神情大特写。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">田赛铅球时段</span></td>
+          <td class="col-event"><strong>各年级男子/女子 铅球 决赛跟拍</strong></td>
+          <td class="col-spot">铅球投掷圈后方 45° 仰拍；落地点侧前方长焦</td>
+          <td class="col-partner">朱烨恒、汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：旋转跟摇 + 砸地特写】</span><br>• 视频：1080p 120fps 随滑步旋转平稳摇摄，球出手瞬间切落地点泥浆飞溅；<br>• 照片：快门 1/1000s 抓拍推球离手手臂完全伸直、五指外展、青筋毕露的力学大片。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全赛程颁奖时段</span></td>
+          <td class="col-event"><strong>各单项冠军登台与闭幕式颁奖礼仪抓拍</strong></td>
+          <td class="col-spot">主席台前颁奖台正面仰拍与全景越肩</td>
+          <td class="col-partner">朱烨恒</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：推向奖杯与全景拉开】</span><br>• 视频：4K 30fps/60fps 记录班主任与班长共同捧起金杯高举过顶、彩带喷射全场欢呼；<br>• 照片：抓拍金杯在中央高举、班旗展开、全班师生跳起挥手的班级全家福圆满大合影。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">15:20 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 200米 预赛（12组）</strong></td>
+          <td class="col-spot">弯道出直道平移视角与终点线</td>
+          <td class="col-partner">徐清来、傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大倾角跟随 + 终点锁焦】</span><br>• 视频：1080p 120fps 跟踪出弯加速；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：15:35 重点专机抓拍高二女第1组第2道沈栋忆起跑、弯道与撞线！</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 10 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-11">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">朱烨恒</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全赛程颁奖时段</span></td>
+          <td class="col-event"><strong>各单项冠军登台颁奖礼仪抓拍</strong></td>
+          <td class="col-spot">主席台前颁奖台正面平视与微仰视角</td>
+          <td class="col-partner">陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：中心聚焦 + 爆发推拉】</span><br>• 视频：4K 60fps 记录获奖选手登台受奖、佩戴金牌、手捧证书瞬间；<br>• 照片：抓拍领奖台上灿烂笑容特写与全班欢呼互动抓拍。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">田赛铅球时段</span></td>
+          <td class="col-event"><strong>铅球力量抓拍与落地点纪实</strong></td>
+          <td class="col-spot">落地点侧前方长焦视角</td>
+          <td class="col-partner">陈佳炜、汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：落地点长焦捕捉】</span><br>• 视频：1080p 120fps 记录黑铁重球砸进草地泥浆飞溅特写；<br>• 照片：快门 1/1000s 定格铅球落地砸出泥坑草屑四溅瞬间与选手推球后仰天大笑。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 11 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-12">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">沈栋忆</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+        <div class="warning-box">
+          <div class="warning-title">⚠️ 【个人单项参赛避让机制】请务必提前 30 分钟向同组搭档交接器材并离岗检录！</div>
+          <div class="warning-item">• <strong>参赛项目</strong>：8日 16:10 高二女 跳远 决赛（第 19 签位，提前至 15:40 离岗，由丁子妍、金煜豪顶岗拍摄并专机抓拍）</div><div class="warning-item">• <strong>参赛项目</strong>：9日 15:35 高二女 200m 预赛（第 1 组 第 2 道，提前至 15:05 离岗，由徐清来、陈佳炜、傅佳雪专机抓拍）</div>
+        </div>
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 4px 5px; --lh: 1.32;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">15:40 - 17:00</span></td>
+          <td class="col-event"><strong>高二女 跳远 决赛（第19签参赛避让）</strong></td>
+          <td class="col-spot">沙坑场地</td>
+          <td class="col-partner">丁子妍、金煜豪</td>
+          <td class="col-guide">15:40 准时向丁子妍交接设备前往检录参赛。比赛期间由丁子妍、金煜豪顶岗拍摄沙坑赛况并专机记录参赛全过程。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">07:50 - 08:50</span></td>
+          <td class="col-event"><strong>高三男子 跳高 决赛（26人）</strong></td>
+          <td class="col-spot">跳高横杆下方偏侧大仰角，以纯净蓝天与树梢为纯色背景</td>
+          <td class="col-partner">连辰毅、金煜豪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弧线跟随上摇至横杆上方】</span><br>• 视频：1080p 120fps（快门 1/250s），镜头随助跑起跳平稳上摇，在选手背越过杆瞬间悬停，记录横杆轻微晃动而不落的惊险心跳时刻；<br>• 照片：高速快门 1/800s 伺服对焦，抓拍背越反弓身体悬空滞空瞬间与过杆后落垫的开怀大笑。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">16:10 - 17:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 4×100米 接力总决赛</strong></td>
+          <td class="col-spot">主席台前终点冲刺线正侧向水平视角</td>
+          <td class="col-partner">石虞涵（负责接力区）</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：终点定焦抓狂欢 + 终点不关机】</span><br>• 视频：1080p 120fps 锁死冲刺撞线与红绸带断裂极慢回放，撞线后严禁关机，持续长录末棒倒地、队友飞奔相拥与全班同学涌上跑道庆祝；<br>• 照片：高速快门 1/1600s，定格第四棒拼死前扑压线、夺冠后仰天长啸与队友勾肩搭背狂欢大笑的经典合影。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">09:25 - 09:50</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 800米 决赛（全组）</strong></td>
+          <td class="col-spot">终点线外侧低机位与出弯直道</td>
+          <td class="col-partner">董欣瑜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：全程追踪锁定 + 终点温情长镜】</span><br>• 视频：1080p 120fps 长焦追踪，09:25 重点盯防高一女800米第1组第6位的社团成员丁子妍！记录其最后一圈咬牙坚持与最后150米顽强冲刺；<br>• 照片：抓拍丁子妍撞线瞬间大汗淋漓咬紧牙关大光圈特写，以及冲线后瘫软在同伴怀中、同伴上前拥抱架扶、递松盖矿泉水的动人纪实特写。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 12 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-13">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">董欣瑜</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">09:25 - 09:50</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 800米 决赛（全组）</strong></td>
+          <td class="col-spot">终点线外侧低机位与草坪侧向视角</td>
+          <td class="col-partner">沈栋忆</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：全程追踪锁定 + 终点温情长镜】</span><br>• 视频：1080p 120fps 专机追踪 09:25 高一女800米第1组第6位丁子妍，抓拍最后一圈顽强冲刺与撞线虚脱后同伴上前拥抱架扶；<br>• 照片：抓拍丁子妍撞线瞬间大汗淋漓咬牙大特写，以及最后一名坚持跑完时全场起立鼓掌、女生抱成一团的感动定格。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全赛程赛隙</span></td>
+          <td class="col-event"><strong>班级大本营温情与赛场花絮纪实拍摄</strong></td>
+          <td class="col-spot">香樟树荫下大本营帐篷、草坪看台各区域</td>
+          <td class="col-partner">独立纪实机位</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：平行侧移跟随 + 浅景深微距】</span><br>• 视频：4K 60fps 记录两人合抬椅子走下台阶、文娱委员小黑板画粉笔画、同学为运动员递水擦汗；<br>• 照片：阳光穿透树叶洒在椅背与校服上的金黄轮廓光，抓拍学生回头欢笑的生动人像大片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 13 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-14">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">陈怀恒</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+        <div class="warning-box">
+          <div class="warning-title">⚠️ 【个人单项参赛避让机制】请务必提前 30 分钟向同组搭档交接器材并离岗检录！</div>
+          <div class="warning-item">• <strong>参赛项目</strong>：8日 14:40 高一男 100m 预赛（第 4 组 第 3 道，提前至 14:10 离岗，由莫佩祥、冯翼、徐清来专机抓拍）</div><div class="warning-item">• <strong>参赛项目</strong>：9日 14:30 高一男 200m 预赛（第 5 组 第 3 道，提前至 14:00 离岗，由徐清来、傅佳雪专机抓拍）</div>
+        </div>
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">14:10 - 14:50</span></td>
+          <td class="col-event"><strong>高一男子 100米 预赛（参赛避让）</strong></td>
+          <td class="col-spot">100米跑道</td>
+          <td class="col-partner">莫佩祥、冯翼、徐清来</td>
+          <td class="col-guide">14:10 准时向莫佩祥交接设备前往检录参赛。比赛期间由莫佩祥、冯翼、徐清来专机记录起跑爆发与冲刺撞线。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">14:00 - 14:45</span></td>
+          <td class="col-event"><strong>高一男子 200米 预赛（参赛避让）</strong></td>
+          <td class="col-spot">200米跑道</td>
+          <td class="col-partner">徐清来、傅佳雪</td>
+          <td class="col-guide">14:00 准时向徐清来交接设备前往检录参赛。比赛期间由徐清来、傅佳雪专机抓拍弯道内倾与出弯超车。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:40 - 09:10</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 1000米 决赛</strong></td>
+          <td class="col-spot">跑道直道与终点线</td>
+          <td class="col-partner">茅熠奇、莫佩祥、汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：伴跑跟摇 + 终点不关机】</span><br>• 视频：1080p 120fps 记录裁判摇响铜钟、内圈同窗挥旗伴跑及冲刺后扑倒被同伴架扶的钢铁意志大片；<br>• 照片：抓拍额头汗珠甩成水滴咬紧牙关大特写。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 14 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-15">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">傅佳雪</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 10.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 5px 6px; --lh: 1.35;">
+              
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">14:30 - 15:05</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 200米 预赛</strong></td>
+          <td class="col-spot">弯道切入直道处低角度，跑道外沿平移视角</td>
+          <td class="col-partner">徐清来</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大倾角内倾跟踪】</span><br>• 视频：1080p 120fps 随选手大弧度身体内倾平稳切入直道；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：14:30 重点专机抓拍高一男第5组第3道陈怀恒弯道超车！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">15:20 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 200米 预赛</strong></td>
+          <td class="col-spot">出弯道直道与终点线冲刺区</td>
+          <td class="col-partner">徐清来、陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大倾角跟随 + 终点锁焦】</span><br>• 视频：1080p 120fps 跟踪出弯加速；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：15:35 重点专机抓拍高二女第1组第2道沈栋忆起跑、弯道与撞线！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">10:00 - 10:25</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 200米 决赛</strong></td>
+          <td class="col-spot">终点正面迎面长焦视角</td>
+          <td class="col-partner">徐清来</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道切入 + 冲线挥拳】</span><br>• 视频：1080p 120fps 捕捉半程飞人决胜刻，记录冠军冲破红绸带后怒吼挥拳或双膝跪地庆祝；<br>• 照片：抓拍冠军撞线瞬间高举双手的胜利大片。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全赛程时段</span></td>
+          <td class="col-event"><strong>学生会幕后工作宣传片（Vlog）拍摄</strong></td>
+          <td class="col-spot">检录处、广播台、器材室、看台各区域</td>
+          <td class="col-partner">池雨曦</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：POV 第一视角 + 纪实长镜】</span><br>• 视频：4K 60fps 追踪学生会干事赛前就位、搬运栏架、检录引导、赛后清场收帐篷全过程；<br>• 照片：抓拍胸前工牌特写与夕阳下收拾器材的剪影大片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 15 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-16">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">茅熠奇</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:10 - 16:40</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 400米 决赛</strong></td>
+          <td class="col-spot">直道前半程与出弯处中景</td>
+          <td class="col-partner">石虞涵、汪清晏、陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大倾角跟随】</span><br>• 视频：1080p 120fps 仰拍弯道身体对抗离心力，记录最后100米体力极点咬紧牙关大步狂飙；<br>• 照片：快门 1/1600s 抓拍冲刺面部表情大特写。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:40 - 09:10</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 1000米 决赛</strong></td>
+          <td class="col-spot">终点直道外侧与终点线</td>
+          <td class="col-partner">陈怀恒、莫佩祥、汪清晏</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：终点不关机长录】</span><br>• 视频：1080p 120fps 贴身抓拍选手冲刺后脱力扑倒、被同伴迅速架扶递水的温情高光；<br>• 照片：抓拍额头汗珠甩成水滴咬紧牙关大特写。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 16 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-17">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">陈玥潼</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄与采访任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全天赛程</span></td>
+          <td class="col-event"><strong>素材整理与采访 / 小广播念稿联络</strong></td>
+          <td class="col-spot">广播站 / 宣传工作站 / 赛场终点线缓冲区</td>
+          <td class="col-partner">张嘉炜、王艳</td>
+          <td class="col-guide"><span class="guide-tag">【现场微访谈与素材整理】</span><br>• 采访：手持无线麦克风/手机录音，在终点缓冲区采访完赛运动员与同伴递水感言，记录真情实感微访谈；<br>• 广播对接：协助各班级收集通讯稿，对接小广播加油稿播发；<br>• 每日赛后协助将音频与采访卡交付后期剪辑组。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 17 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-18">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">张嘉炜</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄与采访任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全天赛程</span></td>
+          <td class="col-event"><strong>素材整理 + 采访 / 宣传片制作协助</strong></td>
+          <td class="col-spot">宣传工作站 / 终点线 / 广播站</td>
+          <td class="col-partner">陈玥潼、王艳</td>
+          <td class="col-guide"><span class="guide-tag">【素材分类与采访协同】</span><br>• 协助陈玥潼开展现场微采访与录音；<br>• 重点跟进学生会幕后工作宣传片（Vlog）的素材分类与文字记录，为高一后期剪辑提供详尽场记单。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 18 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-19">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">王艳</span>
+              <span class="grade-badge">高一（2029 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄与采访任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全天赛程</span></td>
+          <td class="col-event"><strong>素材整理 + 采访 / 小广播加油稿送单</strong></td>
+          <td class="col-spot">广播台 / 各年级大本营 / 宣传工作站</td>
+          <td class="col-partner">陈玥潼、张嘉炜</td>
+          <td class="col-guide"><span class="guide-tag">【后勤联络与加油稿送单】</span><br>• 负责各班级加油稿收集、分类与送往广播台播发；<br>• 协助采访组联络各班班长与运动员，配合拍摄组传递统筹单与对讲机配件。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 19 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-20">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">鲍奕帆</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属后期剪辑任务日程表</div>
+          <table style="font-size: 11px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 6px 8px; --lh: 1.4;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日 - 10日</strong><br><span class="time-badge">全天赛程</span></td>
+          <td class="col-event"><strong>新媒体社剪辑组 / 主片工程主控</strong></td>
+          <td class="col-spot">社团机房剪辑工作站</td>
+          <td class="col-partner">傅梓浩、莫佩祥</td>
+          <td class="col-guide"><span class="guide-tag">【主片工程主控】</span><br>• 搭建标准工程文件目录；接收开幕式多机位素材并按音频对齐同步多机位时间线；<br>• 汇入田径高光与接力素材，配合选曲进行高燃节奏卡点粗剪，调色并输出初版主片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 20 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page" id="page-21">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">傅梓浩</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属后期剪辑任务日程表</div>
+          <table style="font-size: 10.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 5px 6px; --lh: 1.35;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">12:30 - 14:30</span></td>
+          <td class="col-event"><strong>机房工作站就位 / 开幕式多机位素材同步</strong></td>
+          <td class="col-spot">社团机房剪辑工作站</td>
+          <td class="col-partner">鲍奕帆</td>
+          <td class="col-guide">搭建标准工程文件目录；接收开幕式多机位素材并按音频对齐同步多机位时间线。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">14:40 - 17:30</span></td>
+          <td class="col-event"><strong>首日田径赛高光素材粗剪</strong></td>
+          <td class="col-spot">社团机房剪辑工作站</td>
+          <td class="col-partner">鲍奕帆、莫佩祥</td>
+          <td class="col-guide">接收 100m 预赛、400m 决赛及跳远/跳高素材，建立高光主片时间线与卡点粗剪。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">全天赛程</span></td>
+          <td class="col-event"><strong>次日全赛程素材推进与时间线剪辑</strong></td>
+          <td class="col-spot">社团机房剪辑工作站</td>
+          <td class="col-partner">鲍奕帆、莫佩祥</td>
+          <td class="col-guide">实时接收 100m 决赛、200m 预赛、4×100 接力及田赛素材，推进各片卡点与镜头组接。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">08:00 - 17:00</span></td>
+          <td class="col-event"><strong>长跑/接力素材汇入 / 精剪调色与最终导出</strong></td>
+          <td class="col-spot">社团机房剪辑工作站</td>
+          <td class="col-partner">鲍奕帆、莫佩祥</td>
+          <td class="col-guide">汇入千米长跑与 4×400 决战素材；完成全片精剪、调色、音效混音与字幕包装，导出成片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 21 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>

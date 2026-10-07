@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>2026 春晖中学校运会摄制任务单 · 徐清来</title>
+
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 100%;
+    height: 279mm;
+    max-height: 279mm;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748b;
+    margin-bottom: 2px;
+  }
+  .school-tag {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #0369a1;
+  }
+  .badge {
+    display: inline-block;
+    padding: 1px 6px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 700;
+  }
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .main-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+  }
+  .person-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .person-name {
+    font-size: 19px;
+    color: #0284c7;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .grade-badge {
+    font-size: 11px;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    font-weight: 600;
+  }
+
+  /* Warning Box */
+  .warning-box {
+    background: #fff1f2;
+    border-left: 4px solid #e11d48;
+    border-top: 1px solid #ffe4e6;
+    border-right: 1px solid #ffe4e6;
+    border-bottom: 1px solid #ffe4e6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 5px;
+  }
+  .warning-title {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #be123c;
+    margin-bottom: 2px;
+  }
+  .warning-item {
+    font-size: 10px;
+    color: #9f1239;
+    line-height: 1.35;
+    margin-left: 2px;
+  }
+
+  /* Table Section */
+  .table-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 11px;
+    background: #0284c7;
+    border-radius: 2px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
+  }
+  th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 700;
+    text-align: left;
+    padding: 4px 5px;
+    border: 1px solid #cbd5e1;
+    font-size: 10px;
+  }
+  td {
+    padding: var(--cell-pad, 4px 5px);
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+    line-height: var(--lh, 1.32);
+    color: #334155;
+    word-break: break-word;
+  }
+  tr:nth-child(even) td {
+    background: #fafbfc;
+  }
+  
+  .col-time {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .col-event {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .col-partner {
+    font-weight: 700;
+    color: #0369a1;
+  }
+  .col-guide {
+    color: #1e293b;
+  }
+
+  .time-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 1px;
+  }
+  .guide-tag {
+    color: #0369a1;
+    font-weight: 700;
+  }
+  .highlight-fire {
+    color: #e11d48;
+    font-weight: 800;
+  }
+
+  /* Rules Box (Footer) */
+  .footer-wrapper {
+    margin-top: auto;
+  }
+  .footer-rules {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 5px 8px;
+  }
+  .rules-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    font-size: 9px;
+    line-height: 1.32;
+    color: #334155;
+  }
+  .rule-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 3px;
+    padding: 3px 5px;
+  }
+  .rule-num {
+    font-weight: 700;
+    color: #0284c7;
+    margin-bottom: 1px;
+    display: block;
+    font-size: 9.5px;
+  }
+  .rule-item code {
+    background: #f1f5f9;
+    padding: 0 2px;
+    border-radius: 2px;
+    font-family: ui-monospace, monospace;
+    font-size: 8.5px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.5px;
+    color: #94a3b8;
+    margin-top: 3px;
+  }
+</style>
+
+</head>
+<body>
+
+    <div class="page" id="page-2">
+      <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+          <div class="header-top">
+            <span class="school-tag">浙江省春晖中学 · 2026 年校运会新媒体中心</span>
+            <span class="badge">官方定稿 · 单兵执行印制版</span>
+          </div>
+          <div class="title-row">
+            <h1 class="main-title">2026 校运会摄制任务单</h1>
+            <div class="person-badge">
+              <span class="person-name">徐清来</span>
+              <span class="grade-badge">高二（2028 届）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Warning Box -->
+        
+
+        <!-- Table Section -->
+        <div class="table-section">
+          <div class="section-title">专属拍摄任务日程表</div>
+          <table style="font-size: 9.5px;">
+            <thead>
+              <tr>
+                <th style="width: 14%;">日期 / 时段</th>
+                <th style="width: 18%;">比赛项目 / 任务</th>
+                <th style="width: 22%;">机位区域 / 拍摄角度</th>
+                <th style="width: 12%;">协同搭档</th>
+                <th style="width: 34%;">拍摄方法、运镜手法与核心要点</th>
+              </tr>
+            </thead>
+            <tbody style="--cell-pad: 3px 4px; --lh: 1.28;">
+              
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">14:40 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 100米 预赛</strong></td>
+          <td class="col-spot">跑道外沿安全缓冲区贴地 10 公分，终点外侧长焦正迎面</td>
+          <td class="col-partner">莫佩祥、冯翼</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：滑板车平行跟拍 + 终点锁焦】</span><br>• 视频：1080p 120fps（快门 1/250s），手持稳定器踩滑板车在跑道外沿平移跟随起跑加速，终点锁焦冲线肌肉震颤；<br>• 照片：快门 1/1600s 伺服对焦，发令枪响第一步蹬地爆发腿部肌肉紧绷定格；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：14:40 高一男第4组第3道陈怀恒起跑与直道狂飙！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月8日（周四）</strong><br><span class="time-badge">16:25 - 17:30</span></td>
+          <td class="col-event"><strong>高二/高三 女子 仰卧起坐团体比赛</strong></td>
+          <td class="col-spot">垫子一字排开侧面低角度与排面平视全景</td>
+          <td class="col-partner">独立机位</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：横向平移推轨】</span><br>• 视频：4K 60fps 沿垫子横向平移，记录全排垫子齐刷刷上下起伏、同班同学死死压住脚踝大声报数鼓励的宏大群像；<br>• 照片：抓拍按脚同学与做动作同学眼神对视加油的温情抓拍，以及做完后脱力仰面大笑的特写。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">10:10 - 10:40</span></td>
+          <td class="col-event"><strong>100米总决赛（飞人巅峰对决）及颁奖</strong></td>
+          <td class="col-spot">终点线正迎面低机位与终点线侧向微距</td>
+          <td class="col-partner">莫佩祥、冯翼（协同颁奖组）</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：迎面极速抓冲线 + 侧向升格】</span><br>• 视频：1080p 120fps 超长焦迎面压缩景深，锁死前三名毫厘之差冲线瞬间；<br>• 照片：快门 1/2000s 抓拍红色终点缎带贴在胸膛上崩断撕裂的瞬间特写，以及夺冠后双拳紧握仰天长啸的决定性瞬间。</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">14:30 - 15:05</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男子 200米 预赛</strong></td>
+          <td class="col-spot">弯道切入直道处低角度，跑道外沿平移视角</td>
+          <td class="col-partner">傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道大倾角内倾跟踪】</span><br>• 视频：1080p 120fps 镜头随选手大弧度身体内倾平稳切入直道，捕捉抗离心力暴力内切；<br>• 照片：1/30s~1/60s 追随慢门摇拍（跑道拉丝虚化，奔跑身影清晰锐利）；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：14:30 重点抓拍高一男第5组第3道陈怀恒弯道超车！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月9日（周五）</strong><br><span class="time-badge">15:20 - 16:00</span></td>
+          <td class="col-event"><strong>高一/高二/高三 女子 200米 预赛</strong></td>
+          <td class="col-spot">出弯道直道与终点线冲刺区</td>
+          <td class="col-partner">傅佳雪、陈佳炜</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：出弯切线平移 + 终点锁焦】</span><br>• 视频：1080p 120fps 记录女飞人们弯道内倾与最后直道全力冲刺；<br>• 照片：快门 1/1600s 抓拍出弯加速瞬间发丝飞扬；<br>• <span class="highlight-fire">🔥</span><span class="guide-tag">【专机抓拍】</span>：15:35 重点抓拍高二女第1组第2道沈栋忆起跑、弯道与撞线！</td>
+        </tr>
+        
+        <tr>
+          <td class="col-time"><strong>10月10日（周六）</strong><br><span class="time-badge">10:00 - 10:25</span></td>
+          <td class="col-event"><strong>高一/高二/高三 男/女 200米 决赛</strong></td>
+          <td class="col-spot">终点正面迎面长焦与冲刺区侧面</td>
+          <td class="col-partner">傅佳雪</td>
+          <td class="col-guide"><span class="guide-tag">【运镜手法：弯道切入 + 冲线挥拳】</span><br>• 视频：1080p 120fps 捕捉半程飞人决胜刻，记录冠军冲破红绸带后怒吼挥拳或双膝跪地庆祝；<br>• 照片：抓拍冠军撞线瞬间高举双手的胜利大片。</td>
+        </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Rules -->
+      <div class="footer-wrapper">
+        <div class="footer-rules">
+          <div class="rules-title">
+            <span>📋 【现场摄制与拷卡守则 · 印制随身版】</span>
+            <span style="font-size: 8.5px; font-weight: normal; color: #64748b;">全赛程严格执行</span>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-item">
+              <span class="rule-num">01. 连拍打星 · 在精不在多</span>
+              严禁无脑连拍堆砌废片！赛隙务必回看机内打星（Rating 1~5星），精简废片率，侧重高信息密度与有效镜头。
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">02. 拷卡三级目录规范</span>
+              素材交接严禁随意散落，必须严格遵循三级目录结构：<br>
+              <code>日期</code> / <code>比赛项目</code> / <code>机型(拍摄者)</code>
+            </div>
+            <div class="rule-item">
+              <span class="rule-num">03. 突发意外绝对不关机</span>
+              赛场摔倒、脱力倒地、掉棒时严禁移开镜头！同伴飞奔搀扶、递水擦汗是主片与宣传片最珍贵的黄金素材。
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>指挥调度频点：对讲 CH-1 ｜ 素材交接站：社团机房剪辑工作站</span>
+          <span>第 2 页 / 共 21 页</span>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>
