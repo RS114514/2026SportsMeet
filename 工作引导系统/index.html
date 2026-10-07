@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026 春晖中学校运会 · 希沃白板摄制工作引导系统</title>
+    <meta name="description" content="浙江省春晖中学2026年校运会摄制现场工作引导系统，专为希沃触控交互白板设计，具备矢量赛场场景还原、动态机位光波提示、全赛程时间轴推进与白板电子墨水批注功能。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 顶部白板指挥栏 -->
+    <header class="header-bar">
+        <div class="brand-section">
+            <div class="brand-logo">🏃</div>
+            <div class="brand-text">
+                <h1>春晖中学2026校运会 · 摄制工作引导系统</h1>
+                <span class="brand-tag">希沃白板触控交互版 · 1080P/4K大屏就绪</span>
+            </div>
+        </div>
+
+        <!-- 赛程日触控切换大胶囊 -->
+        <nav class="day-switcher" aria-label="运动会日期选择">
+            <button class="day-tab active" data-day-idx="0">
+                <span>🚩 10.8 Day 1</span>
+                <small>开幕式 · 飞人初战</small>
+            </button>
+            <button class="day-tab" data-day-idx="1">
+                <span>⚡ 10.9 Day 2</span>
+                <small>速度决战 · 接力狂欢</small>
+            </button>
+            <button class="day-tab" data-day-idx="2">
+                <span>🏆 10.10 Day 3</span>
+                <small>耐力巅峰 · 闭幕荣光</small>
+            </button>
+        </nav>
+
+        <!-- 顶部白板工具与全屏操作 -->
+        <div class="top-actions">
+            <button class="touch-btn touch-btn-pen" id="btn-pen-toggle" title="开启希沃白板手指/触控笔批注模式">
+                <span>✏️</span>
+                <span>白板批注</span>
+            </button>
+            <button class="touch-btn touch-btn-primary" id="btn-fullscreen" title="切换全屏演示模式">
+                <span>⛶</span>
+                <span>希沃白板全屏</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主工作区：左侧场景还原 + 右侧指挥中心 -->
+    <main class="main-workspace">
+        
+        <!-- 左侧：白马湖田径场矢量还原与时间线交互 -->
+        <section class="stadium-stage-pane" aria-label="赛场全景场景与机位交互">
+            
+            <!-- 浮动白板笔刷工具栏 (批注激活时展开) -->
+            <div class="pen-floating-toolbar" id="pen-toolbar" style="display: none;">
+                <span style="font-size: 13px; font-weight: bold; color: #f87171;">🎨 白板战术画笔：</span>
+                <div class="color-dot active" data-color="#ef4444" style="background: #ef4444;" title="红色批注"></div>
+                <div class="color-dot" data-color="#f59e0b" style="background: #f59e0b;" title="黄色标亮"></div>
+                <div class="color-dot" data-color="#10b981" style="background: #10b981;" title="绿色路线"></div>
+                <div class="color-dot" data-color="#06b6d4" style="background: #06b6d4;" title="青色重点"></div>
+                <button class="touch-btn" id="btn-pen-eraser" style="height: 36px; padding: 0 10px;">🧽 橡皮</button>
+                <button class="touch-btn" id="btn-pen-clear" style="height: 36px; padding: 0 10px;">🗑️ 清屏</button>
+                <button class="touch-btn" id="btn-pen-close" style="height: 36px; padding: 0 10px;">❌ 退出</button>
+            </div>
+
+            <!-- 赛场交互地图容器 -->
+            <div class="stadium-map-container">
+                <svg id="stadium-svg" class="stadium-svg" preserveAspectRatio="xMidYMid meet"></svg>
+                <canvas id="whiteboard-canvas" class="whiteboard-canvas"></canvas>
+            </div>
+
+            <!-- 底部赛程推进与时间段触控轨道 -->
+            <footer class="timeline-scrubber-bar">
+                <div class="player-controls">
+                    <button class="ctrl-btn" id="btn-prev" title="上一时间段">⏮️</button>
+                    <button class="ctrl-btn" id="btn-play" title="播放/暂停赛程推进">▶️</button>
+                    <button class="ctrl-btn" id="btn-next" title="下一时间段">⏭️</button>
+                </div>
+                <div class="period-tracks-container" id="period-tracks">
+                    <!-- 由 JS 动态渲染各时间段卡片 -->
+                </div>
+            </footer>
+        </section>
+
+        <!-- 右侧：重点拍摄与机位调度指挥中心 -->
+        <aside class="command-deck-pane" aria-label="重点拍摄内容与机位排班调度">
+            <header class="deck-header">
+                <div class="deck-header-top">
+                    <span class="deck-badge">
+                        <span class="pulse-dot"></span>
+                        <span id="deck-badge-time">10月8日 · 07:45 - 08:30</span>
+                    </span>
+                    <span style="font-size: 11px; color: var(--text-muted);">实时机位联防</span>
+                </div>
+                <h2 class="deck-time-title" id="deck-time-title">赛前准备与设备出库</h2>
+                <p class="deck-event-summary" id="deck-event-summary">器材清点、活动室动员就位、大本营班级物资抓拍</p>
+            </header>
+
+            <div class="deck-scroll-body">
+                <!-- 社团自家人参赛避让预警区 (动态插入) -->
+                <div id="deck-alert-container" style="display: none;"></div>
+
+                <!-- 重点必抓镜头清单 (会议触控勾选) -->
+                <section class="deck-section-card">
+                    <div class="section-title">
+                        <span class="section-title-icon">🎯</span>
+                        <span>重点拍摄内容与必抓瞬间 (点击标记)</span>
+                    </div>
+                    <div class="priority-list" id="priority-list">
+                        <!-- 由 JS 动态渲染 -->
+                    </div>
+                </section>
+
+                <!-- 当前时段机位排班与当班人员 -->
+                <section class="deck-section-card">
+                    <div class="section-title">
+                        <span class="section-title-icon">📹</span>
+                        <span>推荐机位与当班人员分工</span>
+                    </div>
+                    <div class="crew-list" id="crew-list">
+                        <!-- 由 JS 动态渲染 -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- 底部现场三大铁律指示 -->
+            <footer class="deck-footer-rules">
+                <span class="mini-rule">⭐ 连拍机内打星</span>
+                <span class="mini-rule">📁 三级目录交接</span>
+                <span class="mini-rule">🛑 意外绝不关机</span>
+            </footer>
+        </aside>
+
+    </main>
+
+    <!-- 机位详细参数触控弹窗 (Whiteboard Modal) -->
+    <div class="camera-detail-modal-overlay" id="camera-modal-overlay" role="dialog" aria-modal="true">
+        <div class="camera-detail-modal">
+            <header class="modal-header">
+                <div class="modal-title-box">
+                    <h3 id="modal-cam-title">CAM-01 终点正面长焦机位</h3>
+                    <div class="modal-type-tag" id="modal-cam-type">机位类型：定点长焦</div>
+                </div>
+                <button class="modal-close-btn" id="camera-modal-close" aria-label="关闭机位弹窗">✕</button>
+            </header>
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <div class="modal-spec-card">
+                        <div class="modal-spec-label">推荐镜头与焦段</div>
+                        <div class="modal-spec-val" id="modal-cam-lens">70-200mm f/2.8</div>
+                    </div>
+                    <div class="modal-spec-card">
+                        <div class="modal-spec-label">架设器材与支撑</div>
+                        <div class="modal-spec-val" id="modal-cam-rig">重型三脚架</div>
+                    </div>
+                </div>
+                <div class="modal-grid">
+                    <div class="modal-spec-card" style="grid-column: 1 / -1;">
+                        <div class="modal-spec-label">拍摄模式与参数标准</div>
+                        <div class="modal-spec-val" id="modal-cam-mode">4K 60fps / 高速连拍 1/2000s</div>
+                    </div>
+                </div>
+                <div class="modal-desc-box">
+                    <div class="modal-spec-label" style="margin-bottom: 6px;">运镜要求与画面表现力</div>
+                    <p id="modal-cam-desc">正对百米与接力冲刺线，利用长焦镜头纵深压缩感，精准定格第一名仰天怒吼、胸口压线撕裂红绸缎带的高光时刻。</p>
+                </div>
+                <div class="modal-safety-box" id="modal-cam-safety">
+                    【安全警示与站位红线】：严守终点线延长线 1 米外安全区，切勿遮挡终点裁判员视线。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本加载 -->
+    <script src="stadium-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
